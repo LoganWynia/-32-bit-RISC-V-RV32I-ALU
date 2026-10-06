@@ -1,30 +1,23 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 09/22/2026 06:43:18 PM
--- Design Name: 
--- Module Name: rv32i_alu_tb - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
+-- Author:      Logan Wynia
+-- Created:     2026-09-22
+-- Module:      rv32i_alu_tb - Behavioral
+-- Project:     RV32I 32-bit ALU
+-- License:     MIT (SPDX-License-Identifier: MIT)
+--
 -- Description: Self-checking testbench for the 32-bit RV32I ALU (rv32i_alu).
---              For each of the 10 ALU operations it applies a handful of
---              directed corner-case vectors plus several pseudo-random
---              vectors, compares the ALU's result and zero flag against a
---              behavioral reference model, and prints a per-operation
---              PASS summary and an overall score.
--- 
+--   For each of the 10 ALU operations it applies 6 directed corner-case 
+--   vectors plus 8 pseudo-random vectors, compares the ALU's result and
+--   zero flag against a behavioral reference model, and prints a per-operation
+--   PASS summary and an overall score.
+--
 -- Dependencies: rv32i_alu.vhdl (entity work.rv32i_alu)
--- 
--- Revision:
--- Revision 1 - Testing supported opcodes
--- Additional Comments:
---   Compile/run with GHDL (VHDL-2008):
---     ghdl -a --std=08 rv32i_alu.vhdl rv32i_alu_tb.vhdl
---     ghdl -r --std=08 rv32i_alu_tb
--- 
-----------------------------------------------------------------------------------
+--
+-- Simulate (VHDL-2008, GHDL), from the repo root:
+--   ghdl -a --std=08 src/rv32i_alu.vhdl tb/rv32i_alu_tb.vhdl
+--   ghdl -r --std=08 rv32i_alu_tb
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
