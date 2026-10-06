@@ -1,0 +1,7 @@
+# GHDL artifact files
+*.o
+*.cf
+
+# Waveform files
+*.ghw
+*.vcd
