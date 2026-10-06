@@ -105,7 +105,7 @@ Any other `op` value outputs `0x00000000` (and therefore `zero = 1`).
 Requires [GHDL](https://github.com/ghdl/ghdl) with VHDL-2008 support.
 
 ```sh
-ghdl -a --std=08 src/rv32i_alu.vhd tb/rv32i_alu_tb.vhd
+ghdl -a --std=08 src/rv32i_alu.vhdl tb/rv32i_alu_tb.vhdl
 ghdl -r --std=08 rv32i_alu_tb
 ```
 
@@ -118,7 +118,7 @@ gtkwave alu.ghw
 
 ## Verification
 
-The testbench (`tb/rv32i_alu_tb.vhd`) is self-checking: it needs no waveform
+The testbench (`tb/rv32i_alu_tb.vhdl`) is self-checking: it needs no waveform
 inspection to know whether the design is correct.
 
 **Method**
@@ -174,8 +174,8 @@ boundaries, and shift extremes).
 ## Repository layout
 
 ```
-src/   rv32i_alu.vhd        ALU implementation
-tb/    rv32i_alu_tb.vhd     self-checking testbench
+src/   rv32i_alu.vhdl        ALU implementation
+tb/    rv32i_alu_tb.vhdl     self-checking testbench
 ```
 
 ## Possible extensions
