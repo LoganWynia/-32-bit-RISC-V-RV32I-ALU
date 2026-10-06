@@ -16,7 +16,7 @@
 --   "0110"  OR          a or b
 --   "0111"  AND         a and b
 --
--- Unsupported Opcodes return 0
+-- Any other op value outputs 0x00000000 (and therefore zero = 1)
 --
 -- Flag:
 --   zero   '1' whenever result is all zeros (any operation)
