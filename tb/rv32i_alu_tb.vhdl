@@ -18,7 +18,7 @@
 -- Dependencies: rv32i_alu.vhdl (entity work.rv32i_alu)
 -- 
 -- Revision:
--- Revision 0.01 - File Created
+-- Revision 1 - Testing supported opcodes
 -- Additional Comments:
 --   Compile/run with GHDL (VHDL-2008):
 --     ghdl -a --std=08 rv32i_alu.vhdl rv32i_alu_tb.vhdl
