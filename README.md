@@ -163,7 +163,7 @@ rv32i_alu_tb.vhdl:218:5:@1400ns:(report note): SCORE: 140 / 140
 rv32i_alu_tb.vhdl:221:5:@1400ns:(report note): Testbench complete.
 ```
 **Waveform output** 
-![SLT waveform](docs/slt_wave.png)
+![ADD waveform](docs/add_wave.png)
 ![SRA waveform](docs/sra_wave.png)
 
 **Not covered:** the "unsupported opcode returns zero" behavior, and
