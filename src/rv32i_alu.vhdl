@@ -1,14 +1,14 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: Logan Wynia
--- 
--- Create Date: 09/14/2026 04:30:00 PM
--- Module Name: rv32i_alu_tb - Behavioral
--- Project Name: RV32I 32-bit ALU
--- Description: A 32-bit ALU implementing the RV32I integer register-register
--- operations, designed to minimize hardware by sharing datapath resources.
--- Opcode encoding: op(3) = funct7(5), op(2 downto 0) = funct3, exactly as
--- in the RV32I R-type instruction format:
+-- Author:      Logan Wynia
+-- Created:     2026-09-14
+-- Module:      rv32i_alu - Behavioral
+-- Project:     RV32I 32-bit ALU
+-- License:     MIT (SPDX-License-Identifier: MIT)
+--
+-- Description: Purely combinational 32-bit ALU implementing the RV32I
+--   register-register integer operations, minimizing hardware by sharing
+--   one adder (ADD/SUB/SLT/SLTU) and one barrel shifter (SLL/SRL/SRA).
+--   Opcode encoding: op(3) = funct7(5), op(2 downto 0) = funct3.
 --
 --   op      operation   result
 --   ----    ---------   --------------------------------------------
@@ -23,18 +23,12 @@
 --   "0110"  OR          a or b
 --   "0111"  AND         a and b
 --
--- Any other op value outputs 0x00000000 (and therefore zero = 1)
+--   Any other op value outputs 0x00000000 (and therefore zero = 1).
+--   zero flag: '1' whenever result is all zeros.
 --
--- Flag:
---   zero   '1' whenever result is all zeros (any operation)
--- 
--- Revision:
--- Revision 1 - barrel shifter & shared adder
--- Additional Comments:
---    Compile/run with testbench with GHDL (VHDL-2008):
---      ghdl -a --std=08 src/rv32i_alu.vhdl tb/rv32i_alu_tb.vhdl
---      ghdl -r --std=08 rv32i_alu_tb
--- 
+-- Simulate (VHDL-2008, GHDL), from the repo root:
+--   ghdl -a --std=08 src/rv32i_alu.vhdl tb/rv32i_alu_tb.vhdl
+--   ghdl -r --std=08 rv32i_alu_tb
 ----------------------------------------------------------------------------------
 
 library ieee;
